@@ -1,0 +1,24 @@
+@(barForm: Form[net.fwbrasil.activate.entity.map.MutableEntityMap[Bar]])
+
+@import helper._
+
+    @implicitFieldConstructor = @{
+        FieldConstructor(twitterBootstrapInput.f)
+    }
+
+@main {
+
+    <h1>Add bar</h1>
+
+    @form(routes.Bars.save()) {
+
+        <fieldset>
+            @inputText(barForm("name"), '_label -> "Bar name")
+        </fieldset>
+
+        <div class="actions">
+            <input type="submit" value="Create this bar" class="btn primary"> or
+            <a href="@routes.Bars.read()" class="btn">Cancel</a>
+        </div>
+    }
+}

@@ -1,0 +1,40 @@
+# Routes
+# This file defines all application routes (Higher priority routes first)
+# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+# Home page
+GET         /                      controllers.Application.index
+
+# Map static resources from the /public folder to the /assets URL path
+GET         /assets/*file          controllers.Assets.at(path="/public", file)
+# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+# Foo list
+GET         /foos                   controllers.Foos.read
+
+# Add foo
+GET         /foos/new               controllers.Foos.create
+POST        /foos                   controllers.Foos.save
+
+# Edit foo
+GET         /foos/:id               controllers.Foos.edit(id:String)
+POST        /foos/:id               controllers.Foos.update(id:String)
+
+# Delete foo
+POST        /foos/:id/delete        controllers.Foos.delete(id:String)
+# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+# Bar list
+GET         /bars                   controllers.Bars.read
+
+# Add bar
+GET         /bars/new               controllers.Bars.create
+POST        /bars                   controllers.Bars.save
+
+# Edit bar
+GET         /bars/:id               controllers.Bars.edit(id:String)
+POST        /bars/:id               controllers.Bars.update(id:String)
+
+# Delete bar
+POST        /bars/:id/delete        controllers.Bars.delete(id:String)
+# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

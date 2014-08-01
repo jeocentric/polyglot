@@ -1,0 +1,24 @@
+@(fooForm: Form[net.fwbrasil.activate.entity.map.MutableEntityMap[Foo]])
+
+@import helper._
+
+    @implicitFieldConstructor = @{
+        FieldConstructor(twitterBootstrapInput.f)
+    }
+
+@main {
+
+    <h1>Add foo</h1>
+
+    @form(routes.Foos.save()) {
+
+        <fieldset>
+            @inputText(fooForm("name"), '_label -> "Foo name")
+        </fieldset>
+
+        <div class="actions">
+            <input type="submit" value="Create this foo" class="btn primary"> or
+            <a href="@routes.Foos.read()" class="btn">Cancel</a>
+        </div>
+    }
+}

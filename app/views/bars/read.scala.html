@@ -1,0 +1,25 @@
+@(bars: List[Bar])
+
+@main {
+
+    <h1>Bar list</h1>
+
+    <div id="actions">
+        <a class="btn success" id="add" href="@routes.Bars.create()">Add a new bar</a>
+    </div>
+
+    <table class="bar zebra-striped">
+        <tbody>
+
+        @bars.map {
+            case (bar) => {
+                <tr>
+                    <td><a href="@routes.Bars.edit(bar.id)">@bar.name</a></td>
+                </tr>
+            }
+        }
+
+        </tbody>
+    </table>
+
+}

@@ -1,0 +1,24 @@
+@(foos: List[Foo])
+
+@main {
+
+    <h1>Foo list</h1>
+
+    <div id="actions">
+        <a class="btn success" id="add" href="@routes.Foos.create()">Add a new foo</a>
+    </div>
+
+    <table class="foo zebra-striped">
+        <tbody>
+
+        @foos.map {
+            case (foo) => {
+                <tr>
+                    <td><a href="@routes.Foos.edit(foo.id)">@foo.name</a></td>
+                </tr>
+            }
+        }
+
+        </tbody>
+    </table>
+}
